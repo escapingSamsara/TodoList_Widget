@@ -1,63 +1,45 @@
 window.addEventListener('load', function () {
   //variables
-  const myTodoList = document.querySelector('#myTodoList')
+  const todoList = document.querySelector('#todoList')
   const objects = []
-  const myTodoForm = document.querySelector('#myTodoForm')
+  const myTodoForm = document.querySelector('#todoForm')
   let _idCounter = 0
 
   // MOCKUP OBJECT Array
   const mockupObjectArray = [
     {
-      id: 'myTodoElement_0',
-      text: 'take a walk',
+      id: 'todoElement_0',
+      text: 'buy new plants',
       isImportant: true,
       date: getDate(),
     },
     {
-      id: 'myTodoElement_1',
+      id: 'todoElement_1',
       text: 'wash dishes',
       isImportant: false,
       date: getDate(),
     },
     {
-      id: 'myTodoElement_2',
+      id: 'todoElement_2',
       text: 'throw out trash',
       isImportant: true,
       date: getDate(),
     },
     {
-      id: 'myTodoElement_3',
+      id: 'todoElement_3',
       text: 'clean kitchen',
       isImportant: false,
       date: getDate(),
     },
     {
-      id: 'myTodoElement_4',
+      id: 'todoElement_4',
       text: 'water plants',
       isImportant: true,
       date: getDate(),
     },
     {
-      id: 'myTodoElement_5',
-      text: 'feed mario',
-      isImportant: true,
-      date: getDate(),
-    },
-    {
-      id: 'myTodoElement_6',
-      text: 'clean curtains',
-      isImportant: false,
-      date: getDate(),
-    },
-    {
-      id: 'myTodoElement_7',
-      text: 'repair bicycle',
-      isImportant: true,
-      date: getDate(),
-    },
-    {
-      id: 'myTodoElement_8',
-      text: 'buy new plants',
+      id: 'todoElement_5',
+      text: 'practice coding',
       isImportant: true,
       date: getDate(),
     },
@@ -70,15 +52,14 @@ window.addEventListener('load', function () {
   // SUBMIT Button and Main Logic and Object
   myTodoForm.addEventListener('submit', (e) => {
     e.preventDefault()
-    const myTodoTextVal = document.querySelector('#myTodoText').value
-    const myTodoCheckboxChecked =
-      document.querySelector('#myTodoCheckbox').checked
+    const todoTextVal = document.querySelector('#todoText').value
+    const todoCheckboxChecked = document.querySelector('#todoCheckbox').checked
 
     //Putting Output in an Object and the Object in an array
     const object = {
-      id: `myTodoElement_${_idCounter}`,
-      text: myTodoTextVal,
-      isImportant: myTodoCheckboxChecked,
+      id: `todoElement_${_idCounter}`,
+      text: todoTextVal,
+      isImportant: todoCheckboxChecked,
       date: getDate(),
     }
     renderHtmlContent(object)
@@ -110,7 +91,7 @@ window.addEventListener('load', function () {
       todoElement.classList.add('notImportantTodo')
     }
     _idCounter++
-    myTodoList.prepend(todoElement) //prepend adds tileElement before the last added tileElement (above)
+    todoList.prepend(todoElement) //prepend adds tileElement before the last added tileElement (above)
     const textKeyElement = document.createElement('p')
     textKeyElement.classList.add('todoText')
     textKeyElement.innerText = `${object.text}`
