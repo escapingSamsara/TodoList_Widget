@@ -18,15 +18,6 @@ body {
   background-color: #222831;
 }
 
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -88,16 +79,7 @@ body {
   margin: 2vh auto;
   stroke-dasharray: 90;
   stroke-dashoffset: 90;
-  -webkit-animation: dash 4s infinite alternate;
-          animation: dash 4s infinite alternate;
-}
-@-webkit-keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
-  from {
-    stroke-dashoffset: 90;
-  }
+  animation: dash 4s infinite alternate;
 }
 @keyframes dash {
   to {
@@ -107,7 +89,7 @@ body {
     stroke-dashoffset: 90;
   }
 }
-#todoListContainer #myTodoForm {
+#todoListContainer #todoForm {
   margin: 0 auto 10px;
   height: 20vh;
   min-width: 220px;
@@ -119,7 +101,7 @@ body {
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
-#todoListContainer #myTodoForm #myTodoText {
+#todoListContainer #todoForm #todoText {
   height: 2rem;
   min-width: 238px;
   border: 1px solid rgba(0, 170, 179, 0.5);
@@ -137,10 +119,9 @@ body {
   box-shadow: 0px 1px 24px -1px rgba(0, 0, 0, 0.439);
   outline: none;
   opacity: 0;
-  -webkit-animation: fadeIn 1s ease-in 1s forwards;
-          animation: fadeIn 1s ease-in 1s forwards;
+  animation: fadeIn 1s ease-in 1s forwards;
 }
-#todoListContainer #myTodoForm button {
+#todoListContainer #todoForm button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -158,15 +139,14 @@ body {
   transition: all 0.2s ease-in-out;
   box-shadow: 0px 1px 24px -1px rgba(0, 0, 0, 0.439);
   opacity: 0;
-  -webkit-animation: fadeIn 1s ease-in 3s forwards;
-          animation: fadeIn 1s ease-in 3s forwards;
+  animation: fadeIn 1s ease-in 3s forwards;
 }
-#todoListContainer #myTodoForm button:hover {
+#todoListContainer #todoForm button:hover {
   transition: all 0.2s ease-in-out;
   background-color: #eeeeee;
   color: #00adb5;
 }
-#todoListContainer #myTodoForm .checkbox {
+#todoListContainer #todoForm .checkbox {
   border: 1px solid rgba(0, 172, 181, 0.5);
   display: flex;
   justify-content: center;
@@ -181,26 +161,13 @@ body {
   box-shadow: 0px 1px 24px -1px rgba(0, 0, 0, 0.439);
   border-radius: 100px;
   opacity: 0;
-  -webkit-animation: fadeIn 1s ease-in 2s forwards;
-          animation: fadeIn 1s ease-in 2s forwards;
+  animation: fadeIn 1s ease-in 2s forwards;
 }
-#todoListContainer #myTodoForm .checkbox img {
+#todoListContainer #todoForm .checkbox img {
   position: absolute;
   height: 20px;
   width: 20px;
-  -webkit-animation: pulse 2s ease-in-out infinite;
-          animation: pulse 2s ease-in-out infinite;
-}
-@-webkit-keyframes pulse {
-  0% {
-    transform: scale(0.95);
-  }
-  50% {
-    transform: scale(0.9);
-  }
-  100% {
-    transform: scale(0.95);
-  }
+  animation: pulse 2s ease-in-out infinite;
 }
 @keyframes pulse {
   0% {
@@ -213,14 +180,14 @@ body {
     transform: scale(0.95);
   }
 }
-#todoListContainer #myTodoForm .checkbox [type=checkbox] {
+#todoListContainer #todoForm .checkbox [type=checkbox] {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   border-radius: 100px;
   transition: all 0.3s ease-in-out;
 }
-#todoListContainer #myTodoForm .checkbox [type=checkbox]:before {
+#todoListContainer #todoForm .checkbox [type=checkbox]:before {
   content: "";
   display: block;
   height: 3rem;
@@ -228,7 +195,7 @@ body {
   border-radius: 100px;
   transition: all 0.3s ease-in-out;
 }
-#todoListContainer #myTodoForm .checkbox [type=checkbox]:checked:before {
+#todoListContainer #todoForm .checkbox [type=checkbox]:checked:before {
   content: "";
   display: block;
   height: 3rem;
@@ -245,8 +212,7 @@ body {
   flex-direction: row;
   z-index: 2;
   opacity: 0;
-  -webkit-animation: fadeIn 1s ease-in 6s forwards;
-          animation: fadeIn 1s ease-in 6s forwards;
+  animation: fadeIn 1s ease-in 5s forwards;
 }
 .btnDiv .filterImportanceButton {
   z-index: 2;
@@ -297,7 +263,7 @@ body {
   color: #00adb5;
 }
 
-#myTodoListContent {
+#todoListContent {
   z-index: 2;
   display: block;
   align-items: center;
@@ -309,10 +275,10 @@ body {
   overflow-y: scroll;
   border-radius: 20px;
 }
-#myTodoListContent::-webkit-scrollbar {
+#todoListContent::-webkit-scrollbar {
   visibility: hidden;
 }
-#myTodoListContent #myTodoList {
+#todoListContent #todoList {
   padding: 2vh 0;
   width: 90%;
   display: flex;
@@ -321,15 +287,13 @@ body {
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0px 1px 24px -1px rgba(0, 0, 0, 0.439);
   opacity: 0;
-  -webkit-animation: fadeIn 1s ease-in 4s forwards;
-          animation: fadeIn 1s ease-in 4s forwards;
+  animation: fadeIn 1s ease-in 4s forwards;
 }
-#myTodoListContent .todoElement {
+#todoListContent .todoElement {
   align-items: center;
   display: flex;
   justify-content: space-evenly;
   width: 90%;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin: 0.25vh auto;
@@ -337,24 +301,23 @@ body {
   border-radius: 100px;
   text-align: center;
   opacity: 0;
-  -webkit-animation: fadeIn 0.5s ease-in forwards;
-          animation: fadeIn 0.5s ease-in forwards;
+  animation: fadeIn 0.5s ease-in forwards;
 }
-#myTodoListContent .todoElement .todoText {
+#todoListContent .todoElement .todoText {
   width: 50.5%;
   font-weight: 700;
   font-size: calc(10px + 1.5 * (100vw - 300px) / 1300);
 }
-#myTodoListContent .todoElement .dateElement {
+#todoListContent .todoElement .dateElement {
   width: 20%;
   font-weight: 400;
   font-size: 0.75rem;
 }
-#myTodoListContent .todoElement .todoWrapperImportant {
+#todoListContent .todoElement .todoWrapperImportant {
   width: 2.25rem;
   height: 2.25rem;
 }
-#myTodoListContent .todoWrapperImportant {
+#todoListContent .todoWrapperImportant {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -366,12 +329,11 @@ body {
   background-color: #00adb5;
   border-radius: 100px;
 }
-#myTodoListContent .todoWrapperImportant img {
+#todoListContent .todoWrapperImportant img {
   width: 20px;
   height: 20px;
   z-index: 99;
-  -webkit-animation: pulse 2s ease-in-out infinite;
-          animation: pulse 2s ease-in-out infinite;
+  animation: pulse 2s ease-in-out infinite;
 }
 @keyframes pulse {
   0% {
@@ -384,7 +346,7 @@ body {
     transform: scale(0.95);
   }
 }
-#myTodoListContent .todoWrapperNotImportant {
+#todoListContent .todoWrapperNotImportant {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -396,17 +358,17 @@ body {
   background-color: rgba(34, 40, 49, 0);
   border-radius: 100px;
 }
-#myTodoListContent .todoWrapperNotImportant img {
+#todoListContent .todoWrapperNotImportant img {
   visibility: hidden;
   width: 80%;
   height: 80%;
   z-index: 99;
 }
-#myTodoListContent p {
+#todoListContent p {
   font-size: 1rem;
   font-weight: 600;
 }
-#myTodoListContent .btnElement {
+#todoListContent .btnElement {
   margin: 5px 0;
   display: flex;
   justify-content: center;
@@ -419,16 +381,16 @@ body {
   padding: 0.2rem 0.5rem;
   border-radius: 20px;
 }
-#myTodoListContent .btnElement:hover {
+#todoListContent .btnElement:hover {
   background-color: #eeeeee;
   color: #00adb5;
 }
-#myTodoListContent .importantTodo {
+#todoListContent .importantTodo {
   display: flex;
 }
-#myTodoListContent .notImportantTodo {
+#todoListContent .notImportantTodo {
   display: flex;
 }
-#myTodoListContent #deleteAllButton {
+#todoListContent #deleteAllButton {
   z-index: 2;
 }/*# sourceMappingURL=style.css.map */
